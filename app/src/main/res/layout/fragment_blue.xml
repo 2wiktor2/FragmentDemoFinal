@@ -5,6 +5,7 @@
     android:background="#39b0ff">
 
     <TextView
+        android:id="@+id/tv_fragmentBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BLUE Fragment"

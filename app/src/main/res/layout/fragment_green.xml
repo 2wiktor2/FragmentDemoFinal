@@ -5,6 +5,7 @@
     android:background="#4dd745">
 
     <TextView
+        android:id="@+id/tv_fragmentGreen"
         android:textSize="30sp"
         android:text="GREEN Fragment"
         android:layout_width="wrap_content"
