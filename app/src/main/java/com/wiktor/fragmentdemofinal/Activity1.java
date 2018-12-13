@@ -18,22 +18,34 @@ public class Activity1 extends AppCompatActivity {
 
         button1 = findViewById(R.id.b_1);
 
+
+
+
+
+// Добавление фрагмента автоматически из активити
+
         // получаем экземпляр FragmentTransaction
-/*        FragmentManager myFragmentManager = getSupportFragmentManager();
-        FragmentTransaction myFragmentTransaction = myFragmentManager.beginTransaction();*/
+       FragmentManager myFragmentManager = getSupportFragmentManager();
+        FragmentTransaction myFragmentTransaction = myFragmentManager.beginTransaction();
 
         // Добавляем FragmentBlue
-/*        FragmentBlue myFragmentBlue = new FragmentBlue();
+        FragmentBlue myFragmentBlue = new FragmentBlue();
         myFragmentTransaction.replace(R.id.container, myFragmentBlue);
-        myFragmentTransaction.commit();*/
+        myFragmentTransaction.commit();
 
+
+
+
+
+
+// Добавление фрагмента по клику
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager myFragmentManager = getSupportFragmentManager();
                 FragmentTransaction myFragmentTransaction = myFragmentManager.beginTransaction();
-                FragmentBlue myFragmentBlue = new FragmentBlue();
-                myFragmentTransaction.replace(R.id.container, myFragmentBlue);
+                FragmentRed myFragmentRed = new FragmentRed();
+                myFragmentTransaction.replace(R.id.container, myFragmentRed);
                 myFragmentTransaction.commit();
             }
         });
