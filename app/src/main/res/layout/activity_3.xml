@@ -33,7 +33,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <FrameLayout
-        android:background="#6248b7"
+        android:background="#877da7"
         android:id="@+id/containerActivity3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

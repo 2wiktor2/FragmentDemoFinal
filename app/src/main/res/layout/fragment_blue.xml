@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#39b0ff">
 
     <TextView
@@ -10,6 +11,14 @@
         android:layout_height="wrap_content"
         android:text="BLUE Fragment"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_fragmentBlue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here will be Some Text"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_fragmentBlue"/>
 
 
 </android.support.constraint.ConstraintLayout>

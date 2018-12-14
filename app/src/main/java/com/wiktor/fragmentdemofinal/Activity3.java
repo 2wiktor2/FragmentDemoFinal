@@ -40,7 +40,7 @@ public class Activity3 extends AppCompatActivity implements View.OnClickListener
         fragmentRed = new FragmentRed();
 
 
-
+        fragmentManager = getSupportFragmentManager();
 
     }
 
@@ -49,19 +49,28 @@ public class Activity3 extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()) {
 
             case R.id.button_1:
-                fragmentManager = getSupportFragmentManager();
+                Bundle bundle1 = new Bundle();
+                bundle1.putString(KEY_MSG_1, "Заменили на первый фрагмент");
+                fragmentBlue.setArguments(bundle1);
+
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 transaction.replace(R.id.containerActivity3, fragmentBlue);
                 transaction.commit();
                 break;
             case R.id.button_2:
-                fragmentManager = getSupportFragmentManager();
+                Bundle bundle2 = new Bundle();
+                bundle2.putString(KEY_MSG_2, "Заменили на второй фрагмент");
+                fragmentGreen.setArguments(bundle2);
+
                 FragmentTransaction transaction2 = fragmentManager.beginTransaction();
                 transaction2.replace(R.id.containerActivity3, fragmentGreen);
                 transaction2.commit();
                 break;
             case R.id.button_3:
-                fragmentManager = getSupportFragmentManager();
+                Bundle bundle3 = new Bundle();
+                bundle3.putString(KEY_MSG_3, "Заменили на третий фрагмент");
+                fragmentRed.setArguments(bundle3);
+
                 FragmentTransaction transaction3 = fragmentManager.beginTransaction();
                 transaction3.replace(R.id.containerActivity3, fragmentRed);
                 transaction3.commit();
