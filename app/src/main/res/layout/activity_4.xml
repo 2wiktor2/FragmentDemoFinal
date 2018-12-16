@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity4">
+
+    <Button
+        android:elevation="1dp"
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button_replace"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:elevation="3dp"
+        android:id="@+id/button_replace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="replace"
+        app:layout_constraintLeft_toRightOf="@id/button_add"
+        app:layout_constraintRight_toLeftOf="@id/button_remove"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:elevation="5dp"
+
+        android:id="@+id/button_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="remove"
+        app:layout_constraintLeft_toRightOf="@id/button_replace"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch_back_stack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back Stack"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_replace" />
+
+    <TextView
+        android:hint="x"
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/switch_back_stack"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/switch_back_stack"/>
+    <FrameLayout
+        android:layout_marginTop="80dp"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c1b078" />
+
+</android.support.constraint.ConstraintLayout>

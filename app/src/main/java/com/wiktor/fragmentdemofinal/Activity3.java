@@ -62,9 +62,9 @@ public class Activity3 extends AppCompatActivity implements View.OnClickListener
                 bundle2.putString(KEY_MSG_2, "Заменили на второй фрагмент");
                 fragmentGreen.setArguments(bundle2);
 
-                FragmentTransaction transaction2 = fragmentManager.beginTransaction();
-                transaction2.replace(R.id.containerActivity3, fragmentGreen);
-                transaction2.commit();
+                FragmentTransaction transaction1 = fragmentManager.beginTransaction();
+                transaction1.replace(R.id.containerActivity3, fragmentGreen);
+                transaction1.commit();
                 break;
             case R.id.button_3:
                 Bundle bundle3 = new Bundle();

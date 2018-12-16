@@ -18,10 +18,6 @@ public class Activity1 extends AppCompatActivity {
 
         button1 = findViewById(R.id.b_1);
 
-
-
-
-
 // Добавление фрагмента автоматически из активити
 
         // получаем экземпляр FragmentTransaction
@@ -32,10 +28,6 @@ public class Activity1 extends AppCompatActivity {
         FragmentBlue myFragmentBlue = new FragmentBlue();
         myFragmentTransaction.replace(R.id.container, myFragmentBlue);
         myFragmentTransaction.commit();
-
-
-
-
 
 
 // Добавление фрагмента по клику
