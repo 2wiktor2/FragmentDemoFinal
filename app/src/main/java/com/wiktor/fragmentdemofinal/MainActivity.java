@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button button4_1;
     private Button button5;
     private Button button6;
+    private Button button7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button4_1 = findViewById(R.id.b_4_1);
         button5 = findViewById(R.id.b_5);
         button6 = findViewById(R.id.b_6);
+        button7 = findViewById(R.id.b_7);
+
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button4_1.setOnClickListener(this);
         button5.setOnClickListener(this);
         button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
 
     }
 
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent myIntent4 = new Intent(MainActivity.this, Activity4.class);
                 startActivity(myIntent4);
                 break;
-                case R.id.b_4_1:
+            case R.id.b_4_1:
                 Intent myIntent4_1 = new Intent(MainActivity.this, Activity4_1.class);
                 startActivity(myIntent4_1);
                 break;
@@ -68,6 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.b_6:
                 Intent myIntent6 = new Intent(MainActivity.this, Activity6.class);
                 startActivity(myIntent6);
+                break;
+            case R.id.b_7:
+                Intent myIntent7 = new Intent(MainActivity.this, Activity7.class);
+                startActivity(myIntent7);
                 break;
 
         }

@@ -1,6 +1,7 @@
 package com.wiktor.fragmentdemofinal;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,7 @@ public class Activity4_1 extends AppCompatActivity implements View.OnClickListen
     Switch mySwitch;
     TextView myTextView;
 
-    private FragmentManager fragmentManager;
+    private FragmentManager fragmentManager = getSupportFragmentManager();
     private FragmentTransaction fragmentTransaction;
 
     FragmentWithOutXML blueFragmetnt;
@@ -38,7 +39,8 @@ public class Activity4_1 extends AppCompatActivity implements View.OnClickListen
         myReplace.setOnClickListener(this);
         myRemove.setOnClickListener(this);
 
-        fragmentManager = getSupportFragmentManager();
+
+
     }
 
     @Override
@@ -51,12 +53,22 @@ public class Activity4_1 extends AppCompatActivity implements View.OnClickListen
                 fragmentTransaction.add(R.id.container, blueFragmetnt);
                 break;
             case R.id.button_replace:
+                // todo удаляется весь стек и выводится на экран только один фрагмент
+                //fragmentManager.getFragments();
                 FragmentWithOutXML2 redFragment = new FragmentWithOutXML2();
                 fragmentTransaction.replace(R.id.container, redFragment);
                 break;
                 case R.id.button_remove:
-                    fragmentTransaction.remove(blueFragmetnt);
 
+                    //todo поччему удаляется только 1 фрагмент?
+                   // fragmentTransaction.remove(blueFragmetnt);
+
+
+                    Fragment fragment =  fragmentManager.findFragmentById(R.id.container);
+                    if (fragment != null) {
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.remove(fragment);
+                    }
                 break;
         }
         if (mySwitch.isChecked()) fragmentTransaction.addToBackStack(null);
@@ -65,11 +77,21 @@ public class Activity4_1 extends AppCompatActivity implements View.OnClickListen
         //List<Fragment> myList = fragmentManager.getFragments();
         //int x = myList.size()+1;
 
-
 /*        int x = fragmentManager.getBackStackEntryCount();
         myTextView.setText(Integer.toString(x));*/
 
         fragmentTransaction.commit();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Fragment fragment =  fragmentManager.findFragmentById(R.id.container);
+        if (fragment != null){
+            fragmentTransaction =fragmentManager.beginTransaction();
+                    fragmentTransaction.remove(fragment)
+                    .commit();
+        }
+        super.onBackPressed();
     }
 }
