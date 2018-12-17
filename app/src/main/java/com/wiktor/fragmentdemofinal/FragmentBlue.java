@@ -28,6 +28,9 @@ public class FragmentBlue extends Fragment {
         return view;
 
     }
+
+
+
 }
 
 //  LinearLayout с идентификатором @+id/container является нашим контейнером.
