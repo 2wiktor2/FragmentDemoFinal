@@ -7,9 +7,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class FragmentGreen extends Fragment {
+public class FragmentGreen extends Fragment implements View.OnClickListener {
+
+    EditText editTextRedFragment;
+    Button buttonFragmentGreen;
+    TextView textView2FragmentGreen;
 
     TextView textMsg;
 
@@ -28,5 +34,23 @@ public class FragmentGreen extends Fragment {
             }
         }
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        editTextRedFragment = getActivity().findViewById(R.id.edit_text_red_fragment);
+        buttonFragmentGreen = getActivity().findViewById(R.id.button_fragment_green);
+        textView2FragmentGreen = getActivity().findViewById(R.id.tv_fragmentGreen2);
+
+        buttonFragmentGreen.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        textView2FragmentGreen.setText(editTextRedFragment.getText());
+
     }
 }

@@ -7,4 +7,27 @@
     android:orientation="vertical"
     tools:context=".Activity6">
 
+    <FrameLayout
+        android:layout_weight="1"
+        android:id="@+id/frame_layout_activity_6_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            tools:layout="@layout/fragment_red"
+            android:name="com.wiktor.fragmentdemofinal.FragmentRed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_weight="1"
+        android:id="@+id/frame_layout_activity_6_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            tools:layout="@layout/fragment_green"
+            android:name="com.wiktor.fragmentdemofinal.FragmentGreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
 </LinearLayout>

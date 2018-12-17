@@ -5,16 +5,22 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 public class Activity7 extends AppCompatActivity implements View.OnClickListener {
 
-    FragmentManager fragmentManager = getSupportFragmentManager();
-    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+    //     EventBus - библиотека
 
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    FragmentTransaction fragmentTransaction;
+
+    FragmentViolet myFragmentViolet;
+    FragmentYellow myFragmentYellow;
     FragmentBlue myFragmentBlue;
-    FragmentGreen myFragmentGreen;
-    FragmentRed myFragmentRed;
+
+   // Button buttonFragmentViolet;
 
 
     @Override
@@ -22,36 +28,34 @@ public class Activity7 extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_7);
 
-        myFragmentBlue = new FragmentBlue();
-        fragmentTransaction.add(R.id.container, myFragmentBlue);
+        //buttonFragmentViolet = findViewById(R.id.button_fragment_violet);
+        //buttonFragmentViolet.setOnClickListener(this);
+
+
+
+        myFragmentViolet = new FragmentViolet();
+        fragmentTransaction.add(R.id.frame_layout_container_activity_7, myFragmentViolet);
         fragmentTransaction.commit();
-
-
 
 
     }
 
-   @Override
+    @Override
     public void onClick(View v) {
-
-/*        switch (v.getId()) {
-            case R.id.button_fragment_blue:
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        switch (v.getId()) {
+            case R.id.button_fragment_violet:
                 Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show();
                 Log.d("oooo", "click");
 
                 break;
-            case R.id.button_fragment_green:
-                fragmentTransaction.add(R.id.container, myFragmentRed)
-                        .commit();
-                break;
-            case R.id.button_fragment_red:
-                Toast.makeText(this, "дальше двигаться некуда!", Toast.LENGTH_SHORT).show();
+            case R.id.button_fragment_yellow:
+                myFragmentYellow = new FragmentYellow();
+            break;
 
 
-                break;
-
-
-        }*/
+        }
+        fragmentTransaction.commit();
 
     }
 

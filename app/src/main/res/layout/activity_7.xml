@@ -7,23 +7,11 @@
     android:orientation="vertical"
     tools:context=".Activity7">
 
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_activity_7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Text view в активити" />
-
-    </LinearLayout>
-
     <FrameLayout
-        android:id="@+id/container"
+        android:id="@+id/frame_layout_container_activity_7"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
+
+
 
 </LinearLayout>
