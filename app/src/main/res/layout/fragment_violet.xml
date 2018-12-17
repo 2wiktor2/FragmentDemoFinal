@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffb700"
-    tools:context=".FragmentYellow">
+    android:background="#4b00a1"
+    tools:context=".FragmentViolet">
 
     <TextView
-        android:id="@+id/tv_fragmentYellow"
+        android:id="@+id/tv_fragmentViolet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yellow Fragment"
+        android:text="Violet Fragment"
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/tv_fragmentYellow2"
+        android:id="@+id/tv_fragmentViolet2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Here will be Some Text"
         android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_fragmentYellow" />
+        app:layout_constraintTop_toBottomOf="@id/tv_fragmentViolet" />
 
     <Button
-        android:id="@+id/button_fragment_yellow"
+        android:id="@+id/button_fragment_violet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-->"
