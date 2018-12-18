@@ -5,11 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
-public class Activity7 extends AppCompatActivity implements View.OnClickListener {
+public class Activity7 extends AppCompatActivity implements FragmentViolet.OnSelectedButtonListener{
+
 
     //     EventBus - библиотека
 
@@ -20,7 +18,9 @@ public class Activity7 extends AppCompatActivity implements View.OnClickListener
     FragmentYellow myFragmentYellow;
     FragmentBlue myFragmentBlue;
 
-   // Button buttonFragmentViolet;
+    //Activity7 activity7 = getActivity();
+
+    // Button buttonFragmentViolet;
 
 
     @Override
@@ -32,30 +32,11 @@ public class Activity7 extends AppCompatActivity implements View.OnClickListener
         //buttonFragmentViolet.setOnClickListener(this);
 
 
-
+        fragmentTransaction = fragmentManager.beginTransaction();
         myFragmentViolet = new FragmentViolet();
         fragmentTransaction.add(R.id.frame_layout_container_activity_7, myFragmentViolet);
         fragmentTransaction.commit();
 
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        switch (v.getId()) {
-            case R.id.button_fragment_violet:
-                Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show();
-                Log.d("oooo", "click");
-
-                break;
-            case R.id.button_fragment_yellow:
-                myFragmentYellow = new FragmentYellow();
-            break;
-
-
-        }
-        fragmentTransaction.commit();
 
     }
 
@@ -69,5 +50,11 @@ public class Activity7 extends AppCompatActivity implements View.OnClickListener
                     .commit();
         }
         super.onBackPressed();
+    }
+
+
+    @Override
+    public void onButtonSelected(int buttonIndex) {
+
     }
 }

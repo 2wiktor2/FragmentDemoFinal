@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class FragmentViolet extends Fragment implements View.OnClickListener {
 
@@ -37,12 +38,32 @@ public class FragmentViolet extends Fragment implements View.OnClickListener {
         super.onStart();
     }
 
+
+
+
+
     @Override
     public void onClick(View v) {
+int buttonIndex = translateIdToIndex(v.getId());
+        Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
 
-        Log.d("ololo", "8888888");
+
+        Log.d("ololo", "on Click во фрагменте работает");
 
 
 
+    }
+    int translateIdToIndex(int id) {
+        int index = -1;
+        switch (id) {
+            case R.id.button_fragment_violet:
+                index = 1;
+                break;
+        }
+        return index;
+    }
+
+    public interface OnSelectedButtonListener {
+        void onButtonSelected(int buttonIndex);
     }
 }
