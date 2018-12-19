@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-public class Activity7 extends AppCompatActivity implements FragmentViolet.OnSelectedButtonListener{
+public class Activity7 extends AppCompatActivity {
 
 
     //     EventBus - библиотека
@@ -34,6 +34,7 @@ public class Activity7 extends AppCompatActivity implements FragmentViolet.OnSel
 
         fragmentTransaction = fragmentManager.beginTransaction();
         myFragmentViolet = new FragmentViolet();
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.add(R.id.frame_layout_container_activity_7, myFragmentViolet);
         fragmentTransaction.commit();
 
@@ -51,10 +52,15 @@ public class Activity7 extends AppCompatActivity implements FragmentViolet.OnSel
         }
         super.onBackPressed();
     }
+public void openFragment (Fragment myFragment){
+
+    fragmentTransaction = fragmentManager.beginTransaction();
+    fragmentTransaction.addToBackStack(null);
+    fragmentTransaction.add(R.id.frame_layout_container_activity_7, myFragment);
+    fragmentTransaction.commit();
+
+}
 
 
-    @Override
-    public void onButtonSelected(int buttonIndex) {
 
-    }
 }

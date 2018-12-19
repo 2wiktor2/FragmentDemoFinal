@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,17 +15,12 @@ import android.widget.Toast;
 public class FragmentViolet extends Fragment implements View.OnClickListener {
 
     Button buttonFragmentViolet;
-
+    FragmentYellow myYelloFragment = new FragmentYellow();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View viewFragmentViolet = inflater.inflate(R.layout.fragment_violet, container, false);
-
-       /*  buttonFragmentViolet = viewFragmentViolet.findViewById(R.id.button_fragment_violet);
-        Log.d("ololo", "ojwdjlsdj");
-        buttonFragmentViolet.setOnClickListener(this);*/
-
         return viewFragmentViolet;
     }
 
@@ -39,31 +35,21 @@ public class FragmentViolet extends Fragment implements View.OnClickListener {
     }
 
 
-
-
-
     @Override
     public void onClick(View v) {
-int buttonIndex = translateIdToIndex(v.getId());
+
+
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.frame_layout_container_activity_7, myYelloFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
         Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
 
 
         Log.d("ololo", "on Click во фрагменте работает");
 
 
-
-    }
-    int translateIdToIndex(int id) {
-        int index = -1;
-        switch (id) {
-            case R.id.button_fragment_violet:
-                index = 1;
-                break;
-        }
-        return index;
     }
 
-    public interface OnSelectedButtonListener {
-        void onButtonSelected(int buttonIndex);
-    }
 }
